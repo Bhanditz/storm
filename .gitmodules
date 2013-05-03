@@ -1,0 +1,6 @@
+[submodule "jzmq"]
+	path = jzmq
+	url = git@github.com:brndnmtthws/jzmq.git
+[submodule "storm-mesos"]
+	path = storm-mesos
+	url = git@github.com:brndnmtthws/storm-mesos.git

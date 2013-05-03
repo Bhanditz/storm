@@ -4,8 +4,10 @@ function quit {
 }
 trap quit 1 2 3 15  #Ctrl+C exits.
 
+set -e
+
 RELEASE=`cat VERSION`
-LEIN=`which lein2 || which lein` 
+LEIN=`which lein2 || which lein`
 export LEIN_ROOT=1
 
 echo Making release $RELEASE
@@ -13,7 +15,7 @@ echo Making release $RELEASE
 DIR=`pwd`/_release/storm-$RELEASE
 
 rm -rf _release
-rm -f *.zip 
+rm -f *.zip
 $LEIN pom || exit 1
 mkdir -p $DIR/lib
 
@@ -24,17 +26,9 @@ for module in $(cat MODULES)
 do
 	cd $module
 	mvn dependency:copy-dependencies || exit 1
-	cp -f target/dependency/*.jar $DIR/lib/
-	cp -f target/*.jar $DIR/
+    find . -iname '*.jar' -exec cp -f {} $DIR/lib/ \;
 	cd ..
 done
-
-cd _release/storm-$RELEASE
-for i in *.jar
-do
-	rm -f lib/$i
-done 
-cd ../..
 
 cp CHANGELOG.md $DIR/
 
@@ -58,5 +52,4 @@ cd _release
 zip -r storm-$RELEASE.zip *
 cd ..
 mv _release/storm-*.zip .
-rm -rf _release
 

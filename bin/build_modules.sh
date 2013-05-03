@@ -14,7 +14,6 @@ do
 	fi
 
 
-	$LEIN with-profile release clean
 	$LEIN with-profile release deps
 	$LEIN with-profile release jar
 	$LEIN with-profile release install

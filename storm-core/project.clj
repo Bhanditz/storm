@@ -10,7 +10,7 @@
                  [clj-time "0.4.1"]
                  [com.netflix.curator/curator-framework "1.0.1"
                   :exclusions [log4j/log4j]]
-                 [backtype/jzmq "2.1.0"]
+                 [org.zeromq/jzmq "2.2.3-SNAPSHOT"]
                  [com.googlecode.json-simple/json-simple "1.1"]
                  [compojure "1.1.3"]
                  [hiccup "0.3.6"]
@@ -20,7 +20,7 @@
                  [org.clojure/math.numeric-tower "0.0.1"]
                  [storm/carbonite "1.5.0"]
                  [org.yaml/snakeyaml "1.11"]
-                 [org.apache.httpcomponents/httpclient "4.1.1"]
+                 [org.apache.httpcomponents/httpclient "4.2.5"]
                  [storm/tools.cli "0.2.2"]
                  [com.googlecode.disruptor/disruptor "2.10.1"]
                  [storm/jgrapht "0.8.3"]
@@ -31,7 +31,6 @@
 
   :source-paths ["src/clj"]
   :java-source-paths ["src/jvm"]
-  :test-paths ["test/clj"]
   :resource-paths ["../conf"]
   :target-path "target"
 
@@ -44,7 +43,9 @@
   :plugins [[lein-swank "1.4.4"]]
 
   :repositories {"sonatype"
-                 "http://oss.sonatype.org/content/groups/public/"}
+                  "http://oss.sonatype.org/content/groups/public/"}
+
+
 
   :javac-options ["-g"]
   :jvm-opts ["-Djava.library.path=/usr/local/lib:/opt/local/lib:/usr/lib"]
