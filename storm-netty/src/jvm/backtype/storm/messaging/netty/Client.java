@@ -93,8 +93,8 @@ class Client implements IConnection {
      */
     private int getSleepTimeMs()
     {
-        int backoff = 1 << Math.max(1, retries.get());
-        int sleepMs = base_sleep_ms * Math.max(1, random.nextInt(backoff));
+        int backoff = 1 << Math.min(30, retries.get());
+        int sleepMs = base_sleep_ms * random.nextInt(backoff);
         if ( sleepMs > max_sleep_ms )
             sleepMs = max_sleep_ms;
         if ( sleepMs < base_sleep_ms )
