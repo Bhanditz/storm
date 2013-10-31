@@ -732,9 +732,7 @@
        ))))
 
 (defn get-include-sys? [cookies]
-  (let [sys? (get cookies "sys")
-        sys? (if (or (nil? sys?) (= "false" (:value sys?))) false true)]
-    sys?))
+  true)
 
 (defroutes main-routes
   (GET "/" [:as {cookies :cookies}]
