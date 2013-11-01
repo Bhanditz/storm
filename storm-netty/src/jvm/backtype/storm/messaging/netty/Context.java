@@ -10,14 +10,14 @@ public class Context implements IContext {
     @SuppressWarnings("rawtypes")
     private Map storm_conf;
     private volatile Vector<IConnection> connections;
-    
+
     /**
-     * initialization per Storm configuration 
+     * initialization per Storm configuration
      */
     @SuppressWarnings("rawtypes")
     public void prepare(Map storm_conf) {
        this.storm_conf = storm_conf;
-       connections = new Vector<IConnection>(); 
+       connections = new Vector<IConnection>();
     }
 
     /**
@@ -32,7 +32,7 @@ public class Context implements IContext {
     /**
      * establish a connection to a remote server
      */
-    public IConnection connect(String storm_id, String host, int port) {        
+    public IConnection connect(String storm_id, String host, int port) {
         IConnection client =  new Client(storm_conf, host, port);
         connections.add(client);
         return client;

@@ -26,7 +26,7 @@
                  [storm/jgrapht "0.8.3"]
                  [com.google.guava/guava "13.0"]
                  [ch.qos.logback/logback-classic "1.0.6"]
-                 [org.clojars.brenden/logback-kafka "0.2.0-SNAPSHOT"
+                 [org.clojars.brenden/logback-kafka "0.2.1-SNAPSHOT"
                    :exclusions [com.sun.jmx/jmxri com.sun.jdmk/jmxtools]]
                  [org.slf4j/log4j-over-slf4j "1.6.6"]
                  ]

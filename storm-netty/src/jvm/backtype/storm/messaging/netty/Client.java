@@ -23,14 +23,14 @@ import backtype.storm.utils.Utils;
 
 class Client implements IConnection {
     private static final Logger LOG = LoggerFactory.getLogger(Client.class);
-    private final int max_retries; 
-    private final int base_sleep_ms; 
-    private final int max_sleep_ms; 
+    private final int max_retries;
+    private final int base_sleep_ms;
+    private final int max_sleep_ms;
     private LinkedBlockingQueue<Object> message_queue; //entry should either be TaskMessage or ControlMessage
     private AtomicReference<Channel> channelRef;
     private final ClientBootstrap bootstrap;
     private InetSocketAddress remote_addr;
-    private AtomicInteger retries; 
+    private AtomicInteger retries;
     private final Random random = new Random();
     private final ChannelFactory factory;
     private final int buffer_size;
@@ -38,12 +38,12 @@ class Client implements IConnection {
 
     @SuppressWarnings("rawtypes")
     Client(Map storm_conf, String host, int port) {
-        message_queue = new LinkedBlockingQueue<Object>(); 
+        message_queue = new LinkedBlockingQueue<Object>();
         retries = new AtomicInteger(0);
         channelRef = new AtomicReference<Channel>(null);
         being_closed = new AtomicBoolean(false);
 
-        // Configure 
+        // Configure
         buffer_size = Utils.getInt(storm_conf.get(Config.STORM_MESSAGING_NETTY_BUFFER_SIZE));
         max_retries = Utils.getInt(storm_conf.get(Config.STORM_MESSAGING_NETTY_MAX_RETRIES));
         base_sleep_ms = Utils.getInt(storm_conf.get(Config.STORM_MESSAGING_NETTY_MIN_SLEEP_MS));
@@ -76,7 +76,7 @@ class Client implements IConnection {
             int tried_count = retries.incrementAndGet();
             if (tried_count < max_retries) {
                 Thread.sleep(getSleepTimeMs());
-                LOG.info("Reconnect ... [{}]", tried_count);   
+                LOG.info("Reconnect ... [{}]", tried_count);
                 bootstrap.connect(remote_addr);
                 LOG.debug("connection started...");
             } else {
@@ -85,7 +85,7 @@ class Client implements IConnection {
             }
         } catch (InterruptedException e) {
             LOG.warn("connection failed", e);
-        } 
+        }
     }
 
     /**
