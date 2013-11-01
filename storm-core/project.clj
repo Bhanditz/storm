@@ -26,8 +26,18 @@
                  [storm/jgrapht "0.8.3"]
                  [com.google.guava/guava "13.0"]
                  [ch.qos.logback/logback-classic "1.0.6"]
-                 [org.clojars.brenden/logback-kafka "0.2.1-SNAPSHOT"
-                   :exclusions [com.sun.jmx/jmxri com.sun.jdmk/jmxtools]]
+                 [org.clojars.brenden/logback-kafka "0.2.3-SNAPSHOT"]
+                 [com.yammer.metrics/metrics-core "2.2.0"]
+                 [com.yammer.metrics/metrics-annotation "2.2.0"]
+                 [com.yammer.metrics/metrics-graphite "2.2.0"]
+                 [org.xerial.snappy/snappy-java "1.0.4.1"]
+                 [org.apache.kafka/kafka_2.10 "0.8.0"
+                   :exclusions [
+                      com.sun.jmx/jmxri
+                      com.sun.jdmk/jmxtools
+                      org.apache.zookeeper/zookeeper
+                      log4j/log4j
+                 ]]
                  [org.slf4j/log4j-over-slf4j "1.6.6"]
                  ]
 

@@ -54,6 +54,7 @@ class StormServerHandler extends SimpleChannelUpstreamHandler  {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) {
+        LOG.warn("Connection failed:", e.toString(), e.getCause());
         server.closeChannel(e.getChannel());
     }
 }

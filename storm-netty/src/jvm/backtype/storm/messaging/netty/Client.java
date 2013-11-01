@@ -80,7 +80,7 @@ class Client implements IConnection {
                 bootstrap.connect(remote_addr);
                 LOG.debug("connection started...");
             } else {
-                LOG.warn("Remote address is not reachable. We will close this client.");
+                LOG.warn("Remote address '" + remote_addr + "' is not reachable. We will close this client.");
                 close();
             }
         } catch (InterruptedException e) {
