@@ -25,7 +25,10 @@
                  [com.googlecode.disruptor/disruptor "2.10.1"]
                  [storm/jgrapht "0.8.3"]
                  [com.google.guava/guava "13.0"]
-                 [ch.qos.logback/logback-classic "1.0.6"]
+                 [ch.qos.logback/logback-classic "1.0.6"
+                   :exclusions [
+                      org.slf4j/slf4j-api
+                 ]
                  [org.clojars.brenden/logback-kafka "0.2.3-SNAPSHOT"
                    :exclusions [
                       org.slf4j/slf4j-api
