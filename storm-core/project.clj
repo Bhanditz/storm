@@ -34,10 +34,9 @@
                    :exclusions [
                       org.slf4j/slf4j-api
                  ]]
-                 [org.clojars.brenden/logback-kafka "0.2.6-SNAPSHOT"
+                 [org.clojars.brenden/logback-kafka "0.2.7"
                    :exclusions [
                       org.slf4j/slf4j-api
-                      com.googlecode.json-simple/json-simple
                  ]]
                  [com.yammer.metrics/metrics-core "2.2.0"
                    :exclusions [
