@@ -51,6 +51,7 @@
                       org.apache.zookeeper/zookeeper
                       log4j/log4j
                       org.slf4j/slf4j-api
+                      org.slf4j/slf4j-simple
                  ]]
                  [org.slf4j/log4j-over-slf4j "1.6.6"]
                  ]
