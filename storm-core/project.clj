@@ -5,6 +5,7 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [commons-io "1.4"]
                  [org.apache.commons/commons-exec "1.1"]
+                 [commons-lang/commons-lang "2.6"]
                  [storm/libthrift7 "0.7.0-2"
                   :exclusions [org.slf4j/slf4j-api
                                commons-lang/commons-lang
@@ -32,7 +33,7 @@
                  [ch.qos.logback/logback-classic "1.0.6"
                    :exclusions [
                       org.slf4j/slf4j-api
-                 ]
+                 ]]
                  [org.clojars.brenden/logback-kafka "0.2.4-SNAPSHOT"
                    :exclusions [
                       org.slf4j/slf4j-api
