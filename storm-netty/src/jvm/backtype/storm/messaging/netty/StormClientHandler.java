@@ -100,7 +100,9 @@ public class StormClientHandler extends SimpleChannelUpstreamHandler  {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent event) {
         Throwable cause = event.getCause();
-        LOG.warn("Connection failed:", event.toString(), cause);
+        if (!(cause instanceof ConnectException)) {
+            LOG.info("Connection failed:", cause);
+        }
         if (!being_closed.get()) {
             client.setChannel(null);
             client.reconnect();
