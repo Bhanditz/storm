@@ -34,9 +34,18 @@
                       org.slf4j/slf4j-api
                       com.googlecode.json-simple/json-simple
                  ]]
-                 [com.yammer.metrics/metrics-core "2.2.0"]
-                 [com.yammer.metrics/metrics-annotation "2.2.0"]
-                 [com.yammer.metrics/metrics-graphite "2.2.0"]
+                 [com.yammer.metrics/metrics-core "2.2.0"
+                   :exclusions [
+                      org.slf4j/slf4j-api
+                 ]]
+                 [com.yammer.metrics/metrics-annotation "2.2.0"
+                   :exclusions [
+                      org.slf4j/slf4j-api
+                 ]]
+                 [com.yammer.metrics/metrics-graphite "2.2.0"
+                   :exclusions [
+                      org.slf4j/slf4j-api
+                 ]]
                  [org.xerial.snappy/snappy-java "1.0.4.1"]
                  [org.apache.kafka/kafka_2.10 "0.8.0"
                    :exclusions [
