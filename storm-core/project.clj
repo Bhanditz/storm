@@ -34,7 +34,7 @@
                    :exclusions [
                       org.slf4j/slf4j-api
                  ]]
-                 [org.clojars.brenden/logback-kafka "0.2.4-SNAPSHOT"
+                 [org.clojars.brenden/logback-kafka "0.2.6-SNAPSHOT"
                    :exclusions [
                       org.slf4j/slf4j-api
                       com.googlecode.json-simple/json-simple
