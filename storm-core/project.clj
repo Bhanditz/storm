@@ -28,7 +28,7 @@
                  [ch.qos.logback/logback-classic "1.0.6"
                    :exclusions [
                       org.slf4j/slf4j-api
-                 ]
+                 ]]
                  [org.clojars.brenden/logback-kafka "0.2.3-SNAPSHOT"
                    :exclusions [
                       org.slf4j/slf4j-api
