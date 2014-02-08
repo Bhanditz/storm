@@ -11,7 +11,7 @@
                                commons-lang/commons-lang
                  ]]
                  [clj-time "0.4.1"]
-                 [com.netflix.curator/curator-framework "1.0.1"
+                 [com.netflix.curator/curator-framework "1.0.3"
                   :exclusions [log4j/log4j]]
                  [org.zeromq/jzmq "2.2.3-SNAPSHOT"]
                  [com.googlecode.json-simple/json-simple "1.1"]
