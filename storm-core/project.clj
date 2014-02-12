@@ -12,7 +12,17 @@
                  ]]
                  [clj-time "0.4.1"]
                  [com.netflix.curator/curator-framework "1.0.3"
-                  :exclusions [log4j/log4j]]
+                  :exclusions [
+                      log4j/log4j
+                      org.apache.zookeeper/zookeeper
+                 ]]
+                 [org.apache.zookeeper/zookeeper "3.3.6"
+                  :exclusions [
+                      log4j/log4j
+                      com.sun.jmx/jmxri
+                      com.sun.jdmk/jmxtools
+                      javax.jms/jms
+                 ]]
                  [org.zeromq/jzmq "2.2.3-SNAPSHOT"]
                  [com.googlecode.json-simple/json-simple "1.1"]
                  [compojure "1.1.3"]
