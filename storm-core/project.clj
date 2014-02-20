@@ -44,7 +44,7 @@
                    :exclusions [
                       org.slf4j/slf4j-api
                  ]]
-                 [org.clojars.brenden/logback-kafka "0.2.9"
+                 [org.clojars.brenden/logback-kafka "0.2.10"
                    :exclusions [
                       org.slf4j/slf4j-api
                  ]]
