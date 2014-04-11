@@ -59,6 +59,7 @@ class Client implements IConnection {
         bootstrap.setOption("tcpNoDelay", true);
         bootstrap.setOption("sendBufferSize", buffer_size);
         bootstrap.setOption("keepAlive", true);
+        bootstrap.setOption("connectTimeoutMillis", 5000);
 
         // Set up the pipeline factory.
         bootstrap.setPipelineFactory(new StormClientPipelineFactory(this));

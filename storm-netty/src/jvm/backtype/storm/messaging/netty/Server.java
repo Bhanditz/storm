@@ -48,6 +48,7 @@ class Server implements IConnection {
         bootstrap.setOption("child.tcpNoDelay", true);
         bootstrap.setOption("child.receiveBufferSize", buffer_size);
         bootstrap.setOption("child.keepAlive", true);
+        bootstrap.setOption("backlog", 1024);
 
         // Set up the pipeline factory.
         bootstrap.setPipelineFactory(new StormServerPipelineFactory(this));
